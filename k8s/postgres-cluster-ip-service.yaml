@@ -1,0 +1,12 @@
+# postgres-cluster-ip-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: web
+  ports:
+    - port: 5432
+      targetPort: 5432
